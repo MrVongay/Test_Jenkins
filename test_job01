@@ -18,7 +18,7 @@ pipeline {
         }
         stage("Secozd step") {
             steps {
-                sh 'ssh -p 222 jenkins@jenkins01.ebam.com  \'/usr/bin/last\''
+                sh 'ssh -p 222 jenkins@jenkins01.ebam.com  \'/usr/bin/uptime\''
             }
         }
     }
