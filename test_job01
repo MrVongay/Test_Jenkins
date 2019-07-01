@@ -1,0 +1,25 @@
+#!groovy
+// Check ub1 properties
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("Firzd step") {
+            steps {
+                sh 'ssh -p 222 jenkins@jenkins01.ebam.com  \'/usr/bin/uname -a\''
+            }
+        }
+        stage("Secozd step") {
+            steps {
+                sh 'ssh -p 222 jenkins@jenkins01.ebam.com  \'/usr/bin/last\''
+            }
+        }
+    }
+}
