@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t mvongay:0.0.1 . '
+                	sh 'docker build -t registry-1.docker.io/mvongay/jenkins_test/mvongay:0.0.1 . '
                                        }
                   }
                                       }
